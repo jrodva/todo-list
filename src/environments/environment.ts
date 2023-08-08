@@ -1,4 +1,4 @@
 export const environment = {
-  API_URL: '[INTRODUCE YOUR OWN PRODUCTION API URL]',
-  production: true,
+  API_URL: 'http://localhost:5000/tasks',
+  production: false
 };
