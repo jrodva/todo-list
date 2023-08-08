@@ -6,5 +6,90 @@ import { Component } from '@angular/core';
   styleUrls: ['./tasks-list.component.scss']
 })
 export class TasksListComponent {
-
+  tasks = [
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+    {
+      name: 'Hello'
+    },
+  ]
 }

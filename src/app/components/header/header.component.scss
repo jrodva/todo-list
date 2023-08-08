@@ -1,9 +1,10 @@
 .header-container {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   background-color: #22B9EC;
   width: 100%;
+  padding: 10px;
 
   h1 {
     text-align: center;
