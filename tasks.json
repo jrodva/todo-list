@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "name": "Wash your car",
+      "status": "Pending"
+    },
+    {
+      "id": "2",
+      "name": "Feed your cat",
+      "status": "Completed"
+    },
+    {
+      "id": "3",
+      "name": "Go to run",
+      "status": "Deleted"
+    },
+    {
+      "id": "4",
+      "name": "Clean your home",
+      "status": "Pending"
+    },
+    {
+      "id": "5",
+      "name": "Go to the gym",
+      "status": "Pending"
+    },
+    {
+      "id": "6",
+      "name": "Study English",
+      "status": "Completed"
+    },
+    {
+      "id": "7",
+      "name": "Send email to your partners",
+      "status": "Pending"
+    }
+  ]
+}
