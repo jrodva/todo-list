@@ -7,8 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { FiltersListComponent } from './components/filters-list/filters-list.component';
 import { FilterComponent } from './components/filter/filter.component';
-import { ItemsListComponent } from './components/items-list/items-list.component';
-import { ItemComponent } from './components/item/item.component';
+import { TasksListComponent } from './components/tasks-list/tasks-list.component';
+import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +16,8 @@ import { ItemComponent } from './components/item/item.component';
     HeaderComponent,
     FiltersListComponent,
     FilterComponent,
-    ItemsListComponent,
-    ItemComponent
+    TasksListComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
