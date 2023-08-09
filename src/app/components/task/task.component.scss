@@ -4,11 +4,11 @@
   display: flex;
   justify-content: space-between;
 
-  &.completed-task {
+  .completed-task {
     opacity: 0.5;
   }
 
-  &.deleted-task {
+  .deleted-task {
     text-decoration:line-through;
   }
 }

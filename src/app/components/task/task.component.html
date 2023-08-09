@@ -1,6 +1,26 @@
-<div class="task-container"
-  [ngClass]="{'completed-task': status === 'completed', 'deleted-task': status === 'deleted'}">
-  <span>{{name}}</span>
-  <input *ngIf="status === 'pending'" type="checkbox">
-  <input *ngIf="status === 'completed'" type="checkbox" checked disabled>
+<div class="task-container" (mouseenter)="showEditionMode()" (mouseleave)="hideEditionMode()">
+  <div *ngIf="isEditionModeActive && status === 'pending'; else viewMode">
+    <button>Edit task</button>
+    <button>Delete task</button>
+  </div>
+
+  <ng-template #viewMode>
+    <ng-container [ngSwitch]="status">
+
+      <ng-container *ngSwitchCase="'pending'">
+        <span>{{name}}</span>
+        <input type="checkbox">
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'completed'">
+        <span class="completed-task">{{name}}</span>
+        <input type="checkbox" checked disabled>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'deleted'">
+        <span class="deleted-task">{{name}}</span>
+      </ng-container>
+
+    </ng-container>
+  </ng-template>
 </div>
