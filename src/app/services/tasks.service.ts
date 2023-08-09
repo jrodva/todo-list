@@ -37,6 +37,14 @@ export class TasksService {
     });
   }
 
+  updateTaskName(task: Task, name: string) {
+    this.tasksApiService
+      .updateTaskName(task, name)
+      .subscribe(() => {
+        this.updateTasksWithDataFromApi();
+    });
+  }
+
   updateTasksWithDataFromApi(): void {
     this.tasksApiService
       .getTasks(this.location.path().substring(1))

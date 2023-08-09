@@ -6,6 +6,42 @@
   height: 50px;
   flex-direction: column;
 
+  .edit-task-name-form {
+    justify-content: space-around;
+    display: flex;
+
+    .edit-task-name-label {
+      font-weight: bold;
+    }
+
+    .task-input {
+      width: 250px;
+    }
+
+    .submit-button {
+      border: 1px solid #FFFFFF;
+      padding: 5px;
+      background-color: #22B9EC;
+      color: #FFFFFF;
+
+      &:active {
+        background-color: #09779a;
+      }
+    }
+
+    .cancel-button {
+      border: 1px solid #FFFFFF;
+      padding: 5px;
+      background-color: #ec2233;
+      color: #FFFFFF;
+
+      &:active {
+        background-color: #88121e;
+      }
+    }
+  }
+
+
   .task-options {
     display: flex;
     flex-direction: row;

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Task } from '../../interfaces/task'
 import { TasksService } from '../../services/tasks.service';
 import { Status } from '../../enums/status';
@@ -11,9 +11,14 @@ import { Status } from '../../enums/status';
 export class TaskComponent {
   @Input() task: Task;
 
-  isEditionModeActive: boolean = false;
+  isEditionModeActive = false;
+  isNameFormActive  = false;
 
-  constructor(private tasksService: TasksService) { }
+  @ViewChild('newTaskName', {static: true}) newTaskNameElement: ElementRef;
+
+  constructor(private tasksService: TasksService, newTaskNameElement: ElementRef) {
+    this.newTaskNameElement = newTaskNameElement;
+  }
 
   showEditionMode() {
     this.isEditionModeActive = true;
@@ -29,5 +34,18 @@ export class TaskComponent {
 
   completeTask() {
     this.tasksService.updateTaskStatus(this.task, Status.Completed);
+  }
+
+  editTaskName() {
+    this.isNameFormActive = true;
+  }
+
+  saveNewTaskName() {
+    this.tasksService.updateTaskName(this.task, this.newTaskNameElement.nativeElement.value);
+    this.isNameFormActive = false;
+  }
+
+  cancelTaskNameEdition() {
+    this.isNameFormActive = false;
   }
 }
