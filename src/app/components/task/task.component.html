@@ -4,7 +4,7 @@
       <ng-container *ngSwitchCase="'pending'">
         <div class="task-options">
           <span>{{task.name}}</span>
-          <input type="checkbox">
+          <input type="checkbox" (click)="completeTask()">
         </div>
         <div *ngIf="isEditionModeActive" class="task-options">
           <button>Edit task</button>

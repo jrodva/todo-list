@@ -26,4 +26,8 @@ export class TaskComponent {
   deleteTask() {
     this.tasksService.updateTaskStatus(this.task, Status.Deleted);
   }
+
+  completeTask() {
+    this.tasksService.updateTaskStatus(this.task, Status.Completed);
+  }
 }
