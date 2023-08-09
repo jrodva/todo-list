@@ -27,6 +27,10 @@ export class TasksApiService {
       );
   }
 
+  addNewTask(task: Task) {
+    return this.http.post<Task>(`${environment.API_URL}`, task);
+  }
+
   updateTaskStatus(task: Task, status: Status): Observable<Task> {
     return this.http.put<Task>(`${environment.API_URL}/${task.id}`, {...task, status});
   }

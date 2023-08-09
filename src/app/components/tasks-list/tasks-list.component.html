@@ -1,6 +1,6 @@
 <form class="add-task-form">
   <label class="add-task-label">Add a new task</label>
-  <input type="text" placeholder="Task name" class="task-input">
+  <input type="text" placeholder="Task name" name="taskName" class="task-input" #taskName>
   <input type="submit" value="Save" class="submit-button" (click)="addNewTask()">
 </form>
 <app-task *ngFor="let task of tasks$ | async" [task]="task"></app-task>

@@ -1,7 +1,12 @@
-.filter-option {
+button {
   border: 1px solid #FFFFFF;
   padding: 5px;
-  width: 70px;
+  width: 80px;
   text-align: center;
+  background-color: #22B9EC;
   color: #FFFFFF;
+
+  &:active {
+    background-color: #09779a;
+  }
 }

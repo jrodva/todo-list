@@ -19,5 +19,9 @@
     padding: 5px;
     background-color: #22B9EC;
     color: #FFFFFF;
+
+    &:active {
+      background-color: #09779a;
+    }
   }
 }

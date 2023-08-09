@@ -16,6 +16,19 @@ export class TasksService {
     this.updateTasksWithDataFromApi();
   }
 
+  addNewTask(task: Task) {
+    const id = this.tasks
+      .value
+      .map(task => +task.id)
+      .sort((a, b) => a - b)[this.tasks.value.length -1] + 1;
+
+    this.tasksApiService
+      .addNewTask({ ...task, id: id.toString() })
+      .subscribe(() => {
+        this.updateTasksWithDataFromApi();
+    });
+  }
+
   updateTaskStatus(task: Task, status: Status) {
     this.tasksApiService
       .updateTaskStatus(task, status)
