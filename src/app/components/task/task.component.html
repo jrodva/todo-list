@@ -1,8 +1,8 @@
 <div class="task-container" (mouseenter)="showEditionMode()" (mouseleave)="hideEditionMode()">
-  <div *ngIf="isEditionModeActive && status === 'pending'; else viewMode">
+  <ng-container *ngIf="isEditionModeActive && status === 'pending'; else viewMode">
     <button>Edit task</button>
     <button>Delete task</button>
-  </div>
+  </ng-container>
 
   <ng-template #viewMode>
     <ng-container [ngSwitch]="status">

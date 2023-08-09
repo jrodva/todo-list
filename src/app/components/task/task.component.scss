@@ -3,6 +3,15 @@
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  height: 30px;
+
+  button {
+    border: 1px solid #FFFFFF;
+    padding: 5px;
+    text-align: center;
+    background-color: #22B9EC;
+    color: #FFFFFF;
+  }
 
   .completed-task {
     opacity: 0.5;
