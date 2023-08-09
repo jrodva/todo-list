@@ -1,31 +1,34 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Location } from '@angular/common';
 import { Task } from '../interfaces/task';
+import { TasksApiService } from './tasks-api.service';
 import { Status } from '../enums/status';
-import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TasksService {
+  private tasks: BehaviorSubject<Task[]> = new BehaviorSubject<Task[]>([]);
+  public tasks$: Observable<Task[]> = this.tasks.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private tasksApiService: TasksApiService, private location: Location) {
+    this.updateTasksWithDataFromApi();
+  }
 
-  getTasks(type: string): Observable<Task[]> {
-    return this.http
-      .get<Task[]>(environment.API_URL)
-      .pipe(
-        map(tasks => {
-          const filteredTasks = tasks.filter(task => task.status === type);
-          const orderByStatus = [Status.Pending, Status.Deleted, Status.Completed];
-          const sortedTaskByStatus = tasks.sort(
-            (a, b) => orderByStatus.indexOf(a.status) - orderByStatus.indexOf(b.status)
-          );
+  updateTaskStatus(task: Task, status: Status) {
+    this.tasksApiService
+      .updateTaskStatus(task, status)
+      .subscribe(() => {
+      this.updateTasksWithDataFromApi();
+    });
+  }
 
-          return filteredTasks.length ? filteredTasks : sortedTaskByStatus;
-        })
-      );
+  updateTasksWithDataFromApi(): void {
+    this.tasksApiService
+      .getTasks(this.location.path().substring(1))
+      .subscribe(tasks => {
+      this.tasks.next(tasks);
+    });
   }
 }

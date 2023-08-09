@@ -1,26 +1,26 @@
 <div class="task-container" (mouseenter)="showEditionMode()" (mouseleave)="hideEditionMode()">
-    <ng-container [ngSwitch]="status">
+    <ng-container [ngSwitch]="task.status">
 
       <ng-container *ngSwitchCase="'pending'">
         <div class="task-options">
-          <span>{{name}}</span>
+          <span>{{task.name}}</span>
           <input type="checkbox">
         </div>
         <div *ngIf="isEditionModeActive" class="task-options">
           <button>Edit task</button>
-          <button>Delete task</button>
+          <button (click)="deleteTask()">Delete task</button>
         </div>
       </ng-container>
 
       <ng-container *ngSwitchCase="'completed'">
         <div class="task-options">
-          <span class="completed-task">{{name}}</span>
+          <span class="completed-task">{{task.name}}</span>
           <input type="checkbox" checked disabled>
         </div>
       </ng-container>
 
       <ng-container *ngSwitchCase="'deleted'">
-        <span class="deleted-task">{{name}}</span>
+        <span class="deleted-task">{{task.name}}</span>
       </ng-container>
 
     </ng-container>

@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Task } from '../../interfaces/task'
+import { TasksService } from '../../services/tasks.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tasks-list',
   templateUrl: './tasks-list.component.html',
   styleUrls: ['./tasks-list.component.scss']
 })
-export class TasksListComponent implements OnInit {
+export class TasksListComponent {
+  tasks$: Observable<Task[]>;
 
-  tasks: Task[] = [];
-
-  constructor(private activatedRoute: ActivatedRoute) { }
-
-  ngOnInit() {
-    this.tasks = this.activatedRoute.snapshot.data['tasks'];
+  constructor(private activatedRoute: ActivatedRoute, private tasksService: TasksService) {
+    this.tasks$ = this.tasksService.tasks$;
   }
 }

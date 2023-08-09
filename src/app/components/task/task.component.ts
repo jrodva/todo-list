@@ -1,4 +1,7 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Task } from '../../interfaces/task'
+import { TasksService } from '../../services/tasks.service';
+import { Status } from '../../enums/status';
 
 @Component({
   selector: 'app-task',
@@ -6,10 +9,11 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent {
-  @Input() name: string = '';
-  @Input() status: string = '';
+  @Input() task: Task;
 
   isEditionModeActive: boolean = false;
+
+  constructor(private tasksService: TasksService) { }
 
   showEditionMode() {
     this.isEditionModeActive = true;
@@ -17,5 +21,9 @@ export class TaskComponent {
 
   hideEditionMode() {
     this.isEditionModeActive = false;
+  }
+
+  deleteTask() {
+    this.tasksService.updateTaskStatus(this.task, Status.Deleted);
   }
 }

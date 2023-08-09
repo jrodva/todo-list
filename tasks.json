@@ -33,7 +33,22 @@
     {
       "id": "7",
       "name": "Send email to your partners",
-      "status": "pending"
+      "status": "deleted"
+    },
+    {
+      "id": "8",
+      "name": "Pay taxes",
+      "status": "completed"
+    },
+    {
+      "id": "9",
+      "name": "Call mom",
+      "status": "deleted"
+    },
+    {
+      "id": "10",
+      "name": "Send package to Barcelona",
+      "status": "deleted"
     }
   ]
 }
