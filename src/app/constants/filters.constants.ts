@@ -12,5 +12,9 @@ export const FILTERS: Filter[] = [
   {
     name: 'Completed',
     path: '/completed'
+  },
+  {
+    name: 'Deleted',
+    path: '/deleted'
   }
 ];

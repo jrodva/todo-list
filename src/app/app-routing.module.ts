@@ -28,6 +28,14 @@ const routes: Routes = [
       tasks: tasksResolver
     }
   },
+  {
+    title: 'Deleted tasks',
+    path: 'deleted',
+    component: TasksListComponent,
+    resolve: {
+      tasks: tasksResolver
+    }
+  },
 ];
 
 @NgModule({

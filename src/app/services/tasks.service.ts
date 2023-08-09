@@ -18,8 +18,12 @@ export class TasksService {
       .pipe(
         map(tasks => {
           const filteredTasks = tasks.filter(task => task.status === type);
+          const orderByStatus = ["pending", "deleted", "completed"];
+          const sortedTaskByStatus = tasks.sort(
+            (a, b) => orderByStatus.indexOf(a.status) - orderByStatus.indexOf(b.status)
+          );
 
-          return filteredTasks.length ? filteredTasks : tasks;
+          return filteredTasks.length ? filteredTasks : sortedTaskByStatus;
         })
       );
   }

@@ -1,4 +1,14 @@
 .task-container {
   border-bottom: 1px solid;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  &.completed-task {
+    opacity: 0.5;
+  }
+
+  &.deleted-task {
+    text-decoration:line-through;
+  }
 }
