@@ -2,12 +2,15 @@ import { Filter } from '../interfaces/filter';
 
 export const FILTERS: Filter[] = [
   {
-    name: 'All'
+    name: 'All',
+    path: ''
   },
   {
-    name: 'Pending'
+    name: 'Pending',
+    path: '/pending'
   },
   {
-    name: 'Completed'
+    name: 'Completed',
+    path: '/completed'
   }
 ];

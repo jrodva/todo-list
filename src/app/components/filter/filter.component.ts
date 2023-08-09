@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class FilterComponent {
   @Input() name: string = '';
+  @Input() path: string = '';
 }

@@ -3,37 +3,37 @@
     {
       "id": "1",
       "name": "Wash your car",
-      "status": "Pending"
+      "status": "pending"
     },
     {
       "id": "2",
       "name": "Feed your cat",
-      "status": "Completed"
+      "status": "completed"
     },
     {
       "id": "3",
       "name": "Go to run",
-      "status": "Deleted"
+      "status": "deleted"
     },
     {
       "id": "4",
       "name": "Clean your home",
-      "status": "Pending"
+      "status": "pending"
     },
     {
       "id": "5",
       "name": "Go to the gym",
-      "status": "Pending"
+      "status": "pending"
     },
     {
       "id": "6",
       "name": "Study English",
-      "status": "Completed"
+      "status": "completed"
     },
     {
       "id": "7",
       "name": "Send email to your partners",
-      "status": "Pending"
+      "status": "pending"
     }
   ]
 }
