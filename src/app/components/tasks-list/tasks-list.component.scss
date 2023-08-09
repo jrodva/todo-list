@@ -1,0 +1,23 @@
+.add-task-form {
+  border-bottom: 1px solid;
+  padding: 20px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .add-task-label {
+    font-weight: bold;
+  }
+
+  .task-input {
+    width: 145px;
+  }
+
+  .submit-button {
+    border: 1px solid #FFFFFF;
+    padding: 5px;
+    background-color: #22B9EC;
+    color: #FFFFFF;
+  }
+}

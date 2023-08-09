@@ -15,4 +15,7 @@ export class TasksListComponent {
   constructor(private activatedRoute: ActivatedRoute, private tasksService: TasksService) {
     this.tasks$ = this.tasksService.tasks$;
   }
+
+  addNewTask() {
+  }
 }
