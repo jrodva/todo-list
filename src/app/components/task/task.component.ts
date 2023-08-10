@@ -9,7 +9,7 @@ import { Status } from '../../enums/status';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent {
-  @Input() task: Task;
+  @Input() task: Task = { id: '', name: '', status: Status.Pending };
 
   isEditionModeActive = false;
   isNameFormActive  = false;
