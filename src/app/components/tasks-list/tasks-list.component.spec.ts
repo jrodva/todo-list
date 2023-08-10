@@ -3,7 +3,7 @@ import { TasksListComponent } from './tasks-list.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('ItemsListComponent', () => {
+describe('TasksListComponent', () => {
   let component: TasksListComponent;
   let fixture: ComponentFixture<TasksListComponent>;
 

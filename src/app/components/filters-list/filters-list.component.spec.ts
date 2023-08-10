@@ -1,14 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FiltersListComponent } from './filters-list.component';
+import { FilterComponent } from '../filter/filter.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('FiltersComponent', () => {
+describe('FiltersListComponent', () => {
   let component: FiltersListComponent;
   let fixture: ComponentFixture<FiltersListComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FiltersListComponent]
+      declarations: [FiltersListComponent, FilterComponent],
+      imports: [HttpClientTestingModule]
     });
     fixture = TestBed.createComponent(FiltersListComponent);
     component = fixture.componentInstance;
