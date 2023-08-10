@@ -1,0 +1,15 @@
+describe('Cancelled edition of the task name', () => {
+  it('Starts to edits task name and cancel', () => {
+    cy.visit('/')
+    cy.get('body > app-root > div > app-tasks-list > app-task:nth-child(2) > div').trigger('onmouseover')
+    cy.get('body > app-root > div > app-tasks-list > app-task:nth-child(2) > div').trigger('mouseenter')
+    cy.get('body > app-root > div > app-tasks-list > app-task:nth-child(2) > div > div:nth-child(2) > button:nth-child(1)')
+      .invoke('show')
+      .click()
+    cy.get('body > app-root > div > app-tasks-list > app-task:nth-child(2) > div > div > form > input.task-input')
+      .type(' edited content by Cypress')
+    cy.get('body > app-root > div > app-tasks-list > app-task:nth-child(2) > div > div > form > input.cancel-button')
+      .invoke('show')
+      .click()
+  })
+})
