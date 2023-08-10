@@ -1,4 +1,4 @@
-<div class="task-container" (mouseenter)="showEditionMode()" (mouseleave)="hideEditionMode()">
+<div *ngIf="task" class="task-container" (mouseenter)="showEditionMode()" (mouseleave)="hideEditionMode()">
 
   <ng-container *ngIf="!isNameFormActive">
     <ng-container [ngSwitch]="task.status">
