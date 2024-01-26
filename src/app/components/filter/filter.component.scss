@@ -1,10 +1,12 @@
 button {
   border: 1px solid #FFFFFF;
-  padding: 2px;
-  width: 95px;
+  padding: 5px;
+  width: 150px;
   text-align: center;
   background-color: #22B9EC;
   color: #FFFFFF;
+  font-size: 1.2em;
+  margin: 10px;
 
   &:active {
     background-color: #09779a;
