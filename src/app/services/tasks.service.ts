@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { Location } from '@angular/common';
+import { BehaviorSubject, Observable, take } from 'rxjs';
 import { Task } from '../interfaces/task';
 import { TasksApiService } from './tasks-api.service';
 import { Status } from '../enums/status';
@@ -12,9 +11,7 @@ export class TasksService {
   private tasks: BehaviorSubject<Task[]> = new BehaviorSubject<Task[]>([]);
   public tasks$: Observable<Task[]> = this.tasks.asObservable();
 
-  constructor(private tasksApiService: TasksApiService, private location: Location) {
-    this.updateTasksWithDataFromApi();
-  }
+  constructor(private tasksApiService: TasksApiService) { }
 
   addNewTask(task: Task) {
     const id = this.tasks
@@ -47,9 +44,10 @@ export class TasksService {
 
   updateTasksWithDataFromApi() {
     this.tasksApiService
-      .getTasks(this.location.path().substring(1))
+      .getTasks()
+      .pipe(take(1))
       .subscribe(tasks => {
-      this.tasks.next(tasks);
+        this.tasks.next(tasks);
     });
   }
 }

@@ -12,17 +12,14 @@ import { environment } from '../../environments/environment';
 export class TasksApiService {
   constructor(private http: HttpClient) { }
 
-  getTasks(type: string): Observable<Task[]> {
+  getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(environment.API_URL)
       .pipe(
         map((tasks) => {
-          const filteredTasks = tasks.filter(task => task.status === type);
           const orderByStatus = [Status.Pending, Status.Deleted, Status.Completed];
-          const sortedTaskByStatus = tasks.sort(
+          return tasks.sort(
             (a, b) => orderByStatus.indexOf(a.status) - orderByStatus.indexOf(b.status)
           );
-
-          return filteredTasks.length ? filteredTasks : sortedTaskByStatus;
         })
       );
   }

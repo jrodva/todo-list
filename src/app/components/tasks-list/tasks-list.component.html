@@ -3,4 +3,9 @@
   <input type="text" placeholder="Task name" name="taskName" class="task-input" #taskName>
   <input type="submit" value="Save" class="submit-button" (click)="addNewTask()">
 </form>
-<app-task *ngFor="let task of tasks$ | async" [task]="task"></app-task>
+<ng-template [ngIf]="tasks.length > 0" [ngIfElse]="loading">
+  <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+</ng-template>
+<ng-template #loading>
+  <span>Loading...</span>
+</ng-template>

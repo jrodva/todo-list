@@ -29,7 +29,6 @@ export class FilterComponent implements OnInit, OnDestroy {
 
   async filterTasksByStatus() {
     await this.router.navigate([this.path]);
-    this.tasksService.updateTasksWithDataFromApi();
   }
 
   ngOnDestroy() {
