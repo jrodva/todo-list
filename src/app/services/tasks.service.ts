@@ -29,6 +29,7 @@ export class TasksService {
   updateTaskStatus(task: Task, status: Status) {
     this.tasksApiService
       .updateTaskStatus(task, status)
+      .pipe(take(1))
       .subscribe(() => {
       this.updateTasksWithDataFromApi();
     });
