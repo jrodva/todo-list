@@ -21,6 +21,7 @@ export class TasksService {
 
     this.tasksApiService
       .addNewTask({ ...task, id: id.toString() })
+      .pipe(take(1))
       .subscribe(() => {
         this.updateTasksWithDataFromApi();
     });
@@ -38,6 +39,7 @@ export class TasksService {
   updateTaskName(task: Task, name: string) {
     this.tasksApiService
       .updateTaskName(task, name)
+      .pipe(take(1))
       .subscribe(() => {
         this.updateTasksWithDataFromApi();
     });
