@@ -21,9 +21,11 @@ export class FilterComponent implements OnInit, OnDestroy {
     this.counterSubscription = this.tasksService
       .tasks$
       .subscribe((tasks) => {
-        const filteredCounter = tasks.filter(task => task.status === this.path.substring(1)).length;
-
-        this.counter = filteredCounter || tasks.length;
+        if (this.path.substring(1)) {
+          this.counter = tasks.filter(task => task.status === this.path.substring(1)).length;
+        } else {
+          this.counter = tasks.length;
+        }
     });
   }
 

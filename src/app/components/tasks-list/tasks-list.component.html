@@ -3,9 +3,23 @@
   <input type="text" placeholder="Task name" name="taskName" class="task-input" #taskName>
   <input type="submit" value="Save" class="submit-button" (click)="addNewTask()">
 </form>
-<ng-template [ngIf]="tasks.length > 0" [ngIfElse]="loading">
-  <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+
+<ng-template [ngIf]="isLoading" [ngIfElse]="loaded">
+  <span class="loading">Loading...</span>
 </ng-template>
-<ng-template #loading>
-  <span>Loading...</span>
+
+<ng-template #loaded>
+  <ng-template [ngIf]="isError" [ngIfElse]="success">
+    <span class="error-loading">¡Error loading tasks!</span>
+  </ng-template>
+
+  <ng-template #success>
+    <ng-template [ngIf]="tasks.length > 0" [ngIfElse]="noContent">
+      <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+    </ng-template>
+
+    <ng-template #noContent>
+      <span class="no-content">There aren't tasks</span>
+    </ng-template>
+  </ng-template>
 </ng-template>

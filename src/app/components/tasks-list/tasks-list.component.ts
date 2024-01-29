@@ -12,6 +12,8 @@ import { take } from 'rxjs';
   styleUrls: ['./tasks-list.component.scss']
 })
 export class TasksListComponent implements OnInit {
+  isLoading = true;
+  isError = false;
   tasks: Task[] = [];
   @ViewChild('taskName', {static: true}) taskNameElement: ElementRef;
 
@@ -24,6 +26,11 @@ export class TasksListComponent implements OnInit {
       const path = this.location.path().substring(1);
 
       this.tasks = path ? tasks.filter(task => task.status === path) : tasks;
+      this.isLoading = false;
+    },
+    () => {
+      this.isError = true;
+      this.isLoading = false;
     });
   }
 

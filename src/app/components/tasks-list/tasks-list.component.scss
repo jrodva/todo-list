@@ -25,3 +25,9 @@
     }
   }
 }
+
+.loading, .no-content {
+  display: flex;
+  font-size: 4em;
+  justify-content: center;
+}
