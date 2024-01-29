@@ -10,7 +10,8 @@
     "db:tasks:start": "json-server --watch tasks.json --port 5000",
     "test": "jest",
     "test:watch": "jest --watch",
-    "e2e": "ng e2e",
+    "test:e2e": "ng e2e",
+    "e2e": "run-p db:tasks:start test:e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
