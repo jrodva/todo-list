@@ -43,6 +43,7 @@ export class TasksListComponent implements OnInit, OnDestroy {
     const task: Task = { id: '', name: this.taskNameElement.nativeElement.value, status: Status.Pending };
 
     this.tasksService.addNewTask(task);
+    this.taskNameElement.nativeElement.value = '';
   }
 
   ngOnDestroy(): void {

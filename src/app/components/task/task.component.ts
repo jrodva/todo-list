@@ -46,6 +46,7 @@ export class TaskComponent {
   }
 
   cancelTaskNameEdition() {
+    this.newTaskNameElement.nativeElement.value = this.task.name;
     this.isNameFormActive = false;
   }
 }
