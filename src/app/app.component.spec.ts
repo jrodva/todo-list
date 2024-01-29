@@ -3,10 +3,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FiltersListComponent } from './components/filters-list/filters-list.component';
+import { expect } from '@jest/globals';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
+    imports: [RouterTestingModule, HttpClientTestingModule],
     declarations: [AppComponent, FiltersListComponent, HeaderComponent]
   }));
 

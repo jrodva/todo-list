@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TaskComponent } from './task.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule } from '@angular/forms';
+import { expect } from '@jest/globals';
 
 describe('TaskComponent', () => {
   let component: TaskComponent;

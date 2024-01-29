@@ -3,6 +3,7 @@ import { HeaderComponent } from './header.component';
 import { FiltersListComponent } from '../filters-list/filters-list.component';
 import { FilterComponent } from '../filter/filter.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { expect } from '@jest/globals';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;

@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FiltersListComponent } from './filters-list.component';
 import { FilterComponent } from '../filter/filter.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { expect } from '@jest/globals';
 
 describe('FiltersListComponent', () => {
   let component: FiltersListComponent;
