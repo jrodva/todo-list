@@ -13,6 +13,10 @@ export class TasksService {
 
   constructor(private tasksApiService: TasksApiService) { }
 
+  getTasks(): Task[] {
+    return this.tasks.getValue();
+  }
+
   addNewTask(task: Task) {
     const id = this.tasks
       .value
