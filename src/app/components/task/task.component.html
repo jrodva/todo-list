@@ -30,7 +30,7 @@
     <form class="edit-task-name-form">
       <label class="edit-task-name-label">Edit Name</label>
       <input type="text" name="newTaskName" class="task-input" [value]="task.name" #newTaskName>
-      <input type="submit" value="Save" class="submit-button" (click)="saveNewTaskName()">
+      <input type="button" value="Save" class="submit-button" (click)="saveNewTaskName()">
       <input type="button" value="Cancel" class="cancel-button" (click)="cancelTaskNameEdition()">
     </form>
   </div>
