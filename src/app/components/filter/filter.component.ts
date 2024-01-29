@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { TasksService } from '../../services/tasks.service';
+import { TasksService } from '../../services/tasks/tasks.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 

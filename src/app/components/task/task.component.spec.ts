@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TaskComponent } from './task.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule } from '@angular/forms';
-import { TasksService } from '../../services/tasks.service';
+import { TasksService } from '../../services/tasks/tasks.service';
 import { ElementRef } from '@angular/core';
 import { Status } from '../../enums/status';
 import { expect } from '@jest/globals';

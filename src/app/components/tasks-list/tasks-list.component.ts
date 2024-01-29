@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Task } from '../../interfaces/task'
-import { TasksService } from '../../services/tasks.service';
+import { TasksService } from '../../services/tasks/tasks.service';
 import { Status } from '../../enums/status';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';

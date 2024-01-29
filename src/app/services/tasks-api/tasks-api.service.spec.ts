@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TasksApiService } from './tasks-api.service';
-import { environment } from '../../environments/environment';
-import { Status } from '../enums/status';
-import { Task } from '../interfaces/task';
+import { environment } from '../../../environments/environment';
+import { Status } from '../../enums/status';
+import { Task } from '../../interfaces/task';
 import { expect } from '@jest/globals';
 
 describe('TasksApiService', () => {

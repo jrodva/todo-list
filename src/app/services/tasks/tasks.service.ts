@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, take } from 'rxjs';
-import { Task } from '../interfaces/task';
-import { TasksApiService } from './tasks-api.service';
-import { Status } from '../enums/status';
+import { Task } from '../../interfaces/task';
+import { TasksApiService } from '../tasks-api/tasks-api.service';
+import { Status } from '../../enums/status';
 
 @Injectable({
   providedIn: 'root'

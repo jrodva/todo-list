@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { TasksService } from './tasks.service';
-import { TasksApiService } from './tasks-api.service';
+import { TasksApiService } from '../tasks-api/tasks-api.service';
 import { of } from 'rxjs';
-import { Status } from '../enums/status';
+import { Status } from '../../enums/status';
 import { expect } from '@jest/globals';
 
 describe('TasksService', () => {
